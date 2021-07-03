@@ -1,0 +1,26 @@
+p {
+    &:not(:last-child) {
+        @apply mb-6;
+    }
+}
+
+a {
+    transition: 150ms ease-in-out;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    @apply bg-gray-900 text-sm !important;
+}
+
+input:focus:invalid,
+textarea:focus:invalid {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+input:valid,
+textarea:valid {
+    box-shadow: none !important;
+    @apply border-green-600;
+}
