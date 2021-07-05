@@ -24,6 +24,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 //contact controller:create a record and send to db
-Route::get('contact','ContactFormController@create');
 //post to contact ->allowing 1 request per min
-Route::post('contact','ContactFormController@store')->middleware('throttle:1,60');
+Route::group(['contact' => 'api', 'middleware' => 'throttle:1,60'], function () {
+    Route::get('contact','ContactFormController@create');
+    Route::post('contact','ContactFormController@store');
+});
