@@ -23,3 +23,5 @@ Route::get('/pricing', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+//contact controller:create a record and send to db
+Route::get('contact','ContactFormController@create');

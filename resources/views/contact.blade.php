@@ -14,12 +14,41 @@
     </section>
 
     <section class="my-20">
+    <div class="container mx-auto">
+        
+            <form action="/contact" method="POST">
+                <div class="form-group mb-2 ">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" value="{{ old('name') }}" class="form-control py-3 bg-purple-200"/>
+                    <div>{{ $errors->first('name') }}</div>
+                </div>
 
-        <div class="container max-w-lg">
+                <div class="form-group mb-2">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" value="{{ old('email') }}" class="form-control py-3 bg-purple-200"/>
+                    <div>{{ $errors->first('email') }}</div>
+                </div>
 
+                <div class="form-group mb-6">
+                    <label for="name">Message</label>
+                    <textarea name="message" id="" cols="30" rows="10"
+                        class="form-control bg-purple-200">{{ old('message') }}
+                    </textarea>
+                    <div>{{ $errors->first('message') }}</div>
+                </div>
 
-        </div>
+                @csrf 
 
-    </section>
+                <div class="flex flex-col text-center md:flex-row md:text-left md:items-center">
+                  <button type="submit" class="inline-block px-12 py-5 mb-4 font-bold text-white bg-purple-900 
+                  rounded shadow hover:shadow-lg md:mb-0" href="/contact">
+                     Submit
+                 </button>
+                </div>
+                
+            </form>
+       
+    </div>
+</section>
 
 @endsection
