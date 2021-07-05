@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFormMailable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactFormController extends Controller
 {
@@ -19,7 +21,8 @@ class ContactFormController extends Controller
             'message' => 'required',
         ]);
 
-        
+        //send email
+        Mail::to('test@test.com')->send(new ContactFormMailable());
 
     }
 }

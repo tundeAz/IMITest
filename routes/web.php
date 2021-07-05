@@ -25,3 +25,5 @@ Route::get('/contact', function () {
 });
 //contact controller:create a record and send to db
 Route::get('contact','ContactFormController@create');
+//post to contact
+Route::post('contact','ContactFormController@store');
