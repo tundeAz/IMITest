@@ -13,6 +13,15 @@
         </div>
     </section>
 
+    <section>
+      @if(session()->has('message'))
+      <div class="container mx-auto ">
+          <strong class="bg-purple-500">Message Delivered Successfully!</strong><br>
+          {{session()->get('message') }}
+      </div>
+      @endif
+</section>
+
     <section class="my-20">
     <div class="container mx-auto">
         
